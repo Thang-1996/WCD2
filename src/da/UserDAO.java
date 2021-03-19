@@ -29,9 +29,9 @@ public class UserDAO {
     public void insertUser(User user) throws SQLException, ClassNotFoundException {
         Connection connection = getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SQL);
-        preparedStatement.setString(1,"'N'"+user.getName());
-        preparedStatement.setString(2,"'N'"+user.getEmail());
-        preparedStatement.setString(3,"'N'"+user.getCountry());
+        preparedStatement.setString(1,user.getName());
+        preparedStatement.setString(2,user.getEmail());
+        preparedStatement.setString(3,user.getCountry());
         preparedStatement.executeUpdate();
     }
     public User selectUser(int id) throws SQLException, ClassNotFoundException {
